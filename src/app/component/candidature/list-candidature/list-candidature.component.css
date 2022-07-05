@@ -1,0 +1,14 @@
+#table123{
+    width: 595px;
+    height: 842px;
+}
+#customers2 {
+    max-width: 2480;
+    width: 100%;
+}
+
+#customers2 td {
+    width: auto;
+    overflow: hidden;
+    word-wrap: break-word;
+}

@@ -1,0 +1,194 @@
+<div class="row">
+    <!-- Form add document -->
+
+  <!-- <form class="form-horizontal w-100 px-3" (ngSubmit)="addDocument()" > -->
+  <form class="form-horizontal w-100 px-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><strong>Ajouter Document</strong></h3>
+        <ul class="panel-controls">
+          <li>
+            <a [routerLink]="'/menu'" class="panel-remove"
+              ><span class="fa fa-times"></span
+            ></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="panel-body">
+        <div class="form-group">
+          <label class="col-md-3 col-xs-12 control-label">Gouvernement</label>
+          <div class="col-md-6 col-xs-12">
+            <select
+              class="form-control custom-select"
+              [(ngModel)]="newDocument.gouvernement_nom"
+              name="gouvernement"
+            >
+              <span class="input-group-addon"><span></span></span>
+              <option selected disabled>
+                --- Selectionnez Gouvernement ---
+              </option>
+              <option *ngFor="let gouv of gouverments" [value]="gouv.nom">
+                {{ gouv.nom }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 col-xs-12 control-label">Site Radio</label>
+          <div class="col-md-6 col-xs-12">
+            <select
+              class="form-control custom-select"
+              [(ngModel)]="newDocument.siteRadio_id"
+              name="siteRadio"
+            >
+              <span class="input-group-addon"><span></span></span>
+              <option selected disabled>
+                --- Selectionnez Gouvernement ---
+              </option>
+              <option *ngFor="let site of siteRadioList" [value]="site.id">
+                {{ site.site }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 col-xs-12 control-label">Type de document</label>
+          <div class="col-md-6 col-xs-12">
+            <select
+              class="form-control custom-select"
+              [(ngModel)]="newDocument.typeDoc"
+              name="typeDoc"
+            >
+              <span class="input-group-addon"><span></span></span>
+              <option selected disabled>
+                --- Selectionnez Type Document ---
+              </option>
+              
+              <option  value="Juridique">
+                Juridique
+              </option>
+              
+              <option value="Financiére" >
+                Financiére 
+              </option>
+              
+              <option value="Technique" >
+                Technique
+              </option>
+              
+            </select>
+          </div>
+        </div>
+
+        <!-- <div class="form-group">
+          <label class="col-md-3 col-xs-12 control-label"
+            >Type de document</label
+          >
+          <div class="col-md-6 col-xs-12">
+            <div class="input-group">
+              <span class="input-group-addon"><span></span></span>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="newDocument.typeDoc"
+                name="typeDoc"
+              />
+            </div>
+          </div>
+        </div> -->
+
+        <div class="form-group">
+          <label class="col-md-3 col-xs-12 control-label"> upload file</label>
+
+          <div class="col-md-6 col-xs-12">
+            <!-- <input type="file" class="form-control fileinput btn-primary"  id="filename" 
+                        title="Browse file"  >   -->
+            <label class="btn btn-default p-0">
+              <input type="file" (change)="selectFile($event)" />
+              <!-- <img [src]="imgURL" height="200" *ngIf="imgURL"> -->
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer d-flex justify-content-center">
+        <button
+          class="btn btn-primary w-50 mx-auto"
+          type="button"
+          (click)="addDocument()"
+        >
+          submit
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="col-md-12 p-5 px-6 ovh">
+    <div
+      class="spinner-border d-flex align-items-center justify-content-center"
+      role="status"
+      *ngIf="!documents; else table"
+    >
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <ng-template #table>
+      <div class="panel-body panel-body-table">
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped table-actions">
+            <thead>
+              <tr>
+                <th width="100">Id</th>
+                <th width="100">Type de document</th>
+                <th width="100">Site radio</th>
+                <th width="100">Gouvernement</th>
+                <th width="100">l'emplacement du fichier</th>
+                <th width="100">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="trow_1" *ngFor="let item of documents">
+                <td class="text-center">
+                  <strong>{{ item.id }}</strong>
+                </td>
+                <td class="text-center">
+                  <strong> {{ item.typeDoc }} </strong>
+                </td>
+                <td class="text-center">
+                  <strong>{{ item.siteRadio.site }}</strong>
+                </td>
+                <td class="text-center">
+                  <strong> {{ item.gouvernement.nom }} </strong>
+                </td>
+                <td class="text-center">
+                  <strong *ngIf="item.fileUrl">
+                    {{ "C:\\documents" + item.fileUrl }}
+                  </strong>
+                </td>
+
+                <td>
+                  <button
+                    class="btn btn-default btn-rounded btn-sm"
+                    [routerLink]="['/edit-doc', item.id]"
+                    routerLinkActive="active"
+                  >
+                    <span class="fa fa-pencil"></span>
+                  </button>
+                  <button
+                    class="btn btn-danger btn-rounded btn-sm"
+                    (click)="deleteDocument(item.id)"
+                    type="button"
+                  >
+                    <span class="fa fa-times"></span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+
+  
+
+  <!-- <app-intervention class="w-100" ></app-intervention> -->
+</div>

@@ -1,0 +1,186 @@
+
+    <div class="row" class="center">
+        <div class="col-md-12"  >
+            
+            <form class="form-horizontal">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="color:red;" ><strong>Formulaire d'evaluation</strong> </h3>
+                </div>
+                
+                <div class="panel-body">     
+                    <div> <h5 style="color: #95b75d;"><span>Technique</span></h5></div> 
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Competence 1</label>
+                        <div class="col-md-3 col-xs-12">                                                                                            
+                            <select class="form-control select" [(ngModel)]= "currentCandidature.competence1" name="competence1" >
+                                <span class="input-group-addon"><span class="fa fa-phone"></span></span>
+                                <option [ngValue]="undefined">--- Selectionnez une competence ---</option>
+                                <option *ngFor="let competence1 of competences" [ngValue]="competence1" > {{competence1.nom}}</option>
+                            </select>
+                        </div> 
+                        <div class="col-md-3 col-xs-12" >
+                        
+                            <ngb-rating  [max]="5" [(rate)]="currentCandidature.eval_com1" [readonly]="false" ></ngb-rating>
+                        </div>           
+                    </div>
+
+                   
+                    
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Competence 2</label>
+                        <div class="col-md-3 col-xs-12">                                                                                            
+                            <select class="form-control select" [(ngModel)]= "currentCandidature.competence2" name="competence2" >
+                                <span class="input-group-addon"><span class="fa fa-phone"></span></span>
+                                <option [ngValue]="undefined">--- Selectionnez une competence ---</option>
+                                <option *ngFor="let competence2 of competences" [ngValue]="competence2" > {{competence2.nom}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-xs-12" >
+                        
+                            <ngb-rating  [max]="5" [(rate)]="currentCandidature.eval_com2" [readonly]="false" ></ngb-rating>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Competence 3</label>
+                        <div class="col-md-3 col-xs-12">                                                                                            
+                            <select class="form-control select" [(ngModel)]= "currentCandidature.competence3" name="competence3" >
+                                <span class="input-group-addon"><span class="fa fa-phone"></span></span>
+                                <option [ngValue]="undefined">--- Selectionnez une competence ---</option>
+                                <option *ngFor="let competence3 of competences" [ngValue]="competence3" > {{competence3.nom}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-xs-12" >
+                        
+                            <ngb-rating  [max]="5" [(rate)]="currentCandidature.eval_com3" [readonly]="false" ></ngb-rating>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Competence 4</label>
+                        <div class="col-md-3 col-xs-12">                                                                                            
+                            <select class="form-control select" [(ngModel)]= "currentCandidature.competence4" name="competence4" >
+                                <span class="input-group-addon"><span class="fa fa-phone"></span></span>
+                                <option [ngValue]="undefined">--- Selectionnez une competence ---</option>
+                                <option *ngFor="let competence4 of competences" [ngValue]="competence4" > {{competence4.nom}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-xs-12" >
+                        
+                            <ngb-rating  [max]="5" [(rate)]="currentCandidature.eval_com4" [readonly]="false" ></ngb-rating>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Competence 5</label>
+                        <div class="col-md-3 col-xs-12">                                                                                            
+                            <select class="form-control select" [(ngModel)]= "currentCandidature.competence5" name="competence5" >
+                                <span class="input-group-addon"><span class="fa fa-phone"></span></span>
+                                <option [ngValue]="undefined">--- Selectionnez une competence ---</option>
+                                <option *ngFor="let competence5 of competences" [ngValue]="competence5" > {{competence5.nom}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-xs-12" >
+                        
+                            <ngb-rating  [max]="5" [(rate)]="currentCandidature.eval_com5" [readonly]="false" ></ngb-rating>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Competence 6</label>
+                        <div class="col-md-3 col-xs-12">                                                                                            
+                            <select class="form-control select" [(ngModel)]= "currentCandidature.competence6" name="competence6" >
+                                <span class="input-group-addon"><span class="fa fa-phone"></span></span>
+                                <option [ngValue]="undefined">--- Selectionnez une competence ---</option>
+                                <option *ngFor="let competence6 of competences" [ngValue]="competence6" > {{competence6.nom}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-xs-12" >
+                        
+                            <ngb-rating  [max]="5" [(rate)]="currentCandidature.eval_com6" [readonly]="false" ></ngb-rating>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">competence 7</label>
+                        <div class="col-md-3 col-xs-12">                                                                                            
+                            <select class="form-control select" [(ngModel)]= "currentCandidature.competence7" name="competence7" >
+                                <span class="input-group-addon"><span class="fa fa-phone"></span></span>
+                                <option [ngValue]="undefined">--- Selectionnez une competence ---</option>
+                                <option *ngFor="let competence7 of competences" [ngValue]="competence7" > {{competence7.nom}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-xs-12" >
+                        
+                            <ngb-rating  [max]="5" [(rate)]="currentCandidature.eval_com7" [readonly]="false" ></ngb-rating>
+                        </div>
+                    </div>
+                  
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Commentaire</label>
+                        <div class="col-md-6 col-xs-12">                                            
+                            <textarea class="form-control" rows="3"  [(ngModel)]= "currentCandidature.commentaire_tech" name="commentaire_tech"></textarea>
+                         
+                        </div>
+                    </div>
+                    <div> <h5 style="color: #95b75d;"><span>Soft Skills</span></h5></div> 
+                    <div class="form-group"  >
+                        <label class="col-md-3 col-xs-12 control-label">Francais</label>
+                        <ngb-rating  [max]="5" [(rate)]="currentCandidature.eval_fran" [readonly]="false" ></ngb-rating>
+                    </div>
+
+                    <div class="form-group"  >
+                        <label class="col-md-3 col-xs-12 control-label">Anglais</label>
+                        <ngb-rating  [max]="5" [(rate)]="currentCandidature.eval_ang" [readonly]="false" ></ngb-rating>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Commentaire</label>
+                        <div class="col-md-6 col-xs-12">                                            
+                            <textarea class="form-control" rows="3"  [(ngModel)]= "currentCandidature.commentaire_ss" name="commentaire_ss"></textarea>             
+                        </div>
+                    </div>
+                    <div> <h5 style="color: #95b75d;"><span>Synthése</span></h5></div> 
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Synthése</label>
+                        <div class="col-md-6 col-xs-12">                                            
+                            <textarea class="form-control" rows="3"  [(ngModel)]= "currentCandidature.synthese" name="synthese"></textarea>             
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Conclusion</label>
+                        <div class="col-md-2">                                    
+                            <label class="check"><input type="radio" class="iradio" [(ngModel)]="currentCandidature.conclusion" value="Favorable" name="conclusion"/> Favorable</label>
+                        </div>
+                        <div class="col-md-2">                                    
+                            <label class="check"><input type="radio" class="iradio"  name="conclusion" checked="checked"/> Défavorable</label>
+                        </div>
+                        <div class="col-md-2">                                    
+                            <label class="check"><input type="radio" class="iradio"  name="conclusion" checked="checked"/> A orienter vers</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Commentaire</label>
+                        <div class="col-md-6 col-xs-12">                                            
+                            <textarea class="form-control" rows="3"  [(ngModel)]= "currentCandidature.commentaire_conls" name="commentaire_conls"></textarea>             
+                        </div>
+                    </div> 
+                </div>
+                <div class="panel-footer">
+                                                      
+                    <button class="btn btn-primary pull-right" type="submit" (click)="updateCandidature()" >Submit</button>
+                </div>
+            </div>
+            </form>
+            
+        </div>
+    </div>                    
+    
+
+

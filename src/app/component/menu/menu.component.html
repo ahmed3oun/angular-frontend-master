@@ -1,0 +1,186 @@
+<body>
+        <!-- START PAGE CONTAINER -->
+        <div class="page-container">
+            
+            <!-- START PAGE SIDEBAR -->
+            <div class="page-sidebar">
+                <!-- START X-NAVIGATION -->
+                <ul class="x-navigation">
+                    <li class="xn-logo">
+                        <a href="index.html">Business & Décision </a>
+                        <a href="#" class="x-navigation-control"></a>
+                    </li>
+                    <li class="xn-profile">
+                        <a href="#" class="profile-mini">
+                            <img src="assets/assets/images/users/avatar.jpg" alt="John Doe"/>
+                        </a>
+                        <div class="profile">
+                            <div class="profile-image">
+                                <img 
+                                [src]="image == 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png' ?'/assets/assets/images/users/no-image.jpg':'assets/assets/images/users'+ image"
+                                alt="John Doe"/>
+                            </div>
+                            <div class="profile-data">
+                                <div class="profile-data-name" >  {{username}}</div>
+                                <div class="profile-data-title"> {{role}}</div>
+                            </div>
+                            
+                        </div>                                                                        
+                    </li>
+                    <li class="xn-title">Navigation</li>
+                    <li class="active" *ngIf="(isENGINEER() || isADMIN()) && !isIntervention()">
+                        <a [routerLink] ="'/admin'" routerLinkActive="active"> <span class="fa fa-user"></span> <span class="xn-text">Utilisateur</span></a>                        
+                    </li>    
+                    
+                    <li *ngIf="!isIntervention()" class="active">
+                        <!-- <a  data-toggle="collapse" 
+                                data-target="#dashboard" aria-expanded="false" 
+                                aria-controls="dashboard" class="collapsed dropdow-toggle" >
+                             
+                             <span class="fa fa-chevron-left pull-right"></span>
+                        </a>
+                        <ul class="sub-menu collapse" id="dashboard">
+                            <li><a href="#">Gestion Site Radio</a></li>
+                            <li><a href="#">Gestion Document</a></li>
+                            <li><a href="#">Dashboard </a></li>
+                            
+                        </ul> -->
+                        <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-th-large"></i>
+                             <span class="nav-label"> Site Radio </span>
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" routerLink="/siteRadio">Gestion Site Radio</a>
+                            <a class="dropdown-item" routerLink="/doc">Gestion Document</a>
+                            <a class="dropdown-item" href="#">Dashboard</a>
+                          </div>
+                    </li>      
+                    <li *ngIf="!isIntervention()" class="active">
+                        <a routerLink ="/offre" routerLinkActive="active"> <span class="fa fa-briefcase"></span> <span class="xn-text">Offre</span></a>                        
+                    </li>  
+                    <li *ngIf="!isIntervention()" class="active">
+                        <a routerLink ="/candidature" routerLinkActive="active"> <span class="fa fa-files-o"></span> <span class="xn-text">Candidature</span></a>                        
+                    </li> 
+                    <li *ngIf="isIntervention()" class="active">
+                        <a routerLink ="/intervention" routerLinkActive="active"> <span class="fa fa-files-o"></span> <span class="xn-text">Intervention</span></a>                        
+                    </li> 
+                    
+                                     
+                    
+                  
+                    
+                </ul>
+                <!-- <div id="sidebar" class="nav-collapse ">
+                     
+                    <ul class="sidebar-menu">
+                      <li class="active">
+                        <a class="" href="index.html">
+                                      <i class="icon_house_alt"></i>
+                                      <span>Dashboard</span>
+                                  </a>
+                      </li>
+                      <li class="sub-menu">
+                        <a href="javascript:;" class="">
+                                      <i class="icon_document_alt"></i>
+                                      <span>Forms</span>
+                                      <span class="menu-arrow arrow_carrot-right"></span>
+                                  </a>
+                        <ul class="sub">
+                          <li><a class="" href="form_component.html">Form Elements</a></li>
+                          <li><a class="" href="form_validation.html">Form Validation</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                </div> -->
+                <!-- END X-NAVIGATION -->
+            </div>
+            <!-- END PAGE SIDEBAR -->
+            
+            <!-- PAGE CONTENT -->
+            <div class="page-content">
+                
+                <!-- START X-NAVIGATION VERTICAL -->
+                <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+                    <!-- TOGGLE NAVIGATION -->
+                    <li class="xn-icon-button">
+                        <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+                    </li>
+                    <!-- END TOGGLE NAVIGATION -->
+                    <!-- SEARCH -->
+                    <li class="xn-search">
+                        <form role="form">
+                            <input type="text" name="search" placeholder="Search..."/>
+                        </form>
+                    </li>   
+                    <!-- END SEARCH -->
+                    <!-- SIGN OUT -->
+                    <li class="xn-icon-button pull-right">
+                        <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>                        
+                    </li> 
+                    <!-- END SIGN OUT -->
+                    <!-- MESSAGES -->
+                    <li class="xn-icon-button pull-right">
+                        <a href="#"><span class="fa fa-comments"></span></a>                      
+                    </li>
+                    <!-- END MESSAGES -->
+                    <!-- TASKS -->
+                    <li class="xn-icon-button pull-right">
+                        <a routerLink ="/admin" routerLinkActive="active"><span class="fa fa-users"></span></a>
+                                              
+                    </li>
+                    <!-- END TASKS -->
+                </ul>
+                <!-- END X-NAVIGATION VERTICAL -->                     
+
+                <!-- START BREADCRUMB -->
+                <ul class="breadcrumb">
+                    
+                </ul>
+                <!-- END BREADCRUMB -->                       
+                
+                <!-- PAGE CONTENT WRAPPER -->
+                <div class="page-content-wrap">
+                                 
+                               
+                    <router-outlet></router-outlet>
+                
+                                   
+                   
+                    
+                </div>
+                <!-- END PAGE CONTENT WRAPPER -->                                
+            </div>            
+            <!-- END PAGE CONTENT -->
+        </div>
+        <!-- END PAGE CONTAINER -->
+
+        <!-- MESSAGE BOX-->
+        <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
+                    <div class="mb-content">
+                        <p>Are you sure you want to log out?</p>                    
+                        <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+                    </div>
+                    <div class="mb-footer">
+                        <div class="pull-right">
+                            <button  class="btn btn-success btn-lg" type="submit" (click)="logout()" >Yes</button>
+                            <button class="btn btn-default btn-lg mb-control-close">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MESSAGE BOX-->
+        
+   
+        <!-- END TEMPLATE -->
+    <!-- END SCRIPTS -->         
+    </body>
+
+
+
+
+
+

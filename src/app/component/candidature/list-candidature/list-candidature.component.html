@@ -1,0 +1,100 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+               
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <span class="fa fa-search"></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Who are you looking for?"/>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-success btn-block" *ngIf="isUser()" routerLink ="/addCandidature"  style="background-color:#95b75d ;" routerLinkActive="active" ><span class="fa fa-plus"></span> Ajouter une nouvelle candaidature</button>
+                        </div>
+                    </div>
+                </form>                                    
+            </div>
+        </div>
+        
+        <!-- START DATATABLE EXPORT -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Candidature</h3>
+                <div class="btn-group pull-right">
+                    <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i> Export Data</button>
+                    <ul class="dropdown-menu">
+                        <li class="divider"></li> 
+                        <li><a  (click)="exportExcel()"><img src='assets/img/icons/xls.png' width="24"/> XLS</a></li>
+                        <li><a  (click)="makePDF()"><img src='assets/img/icons/pdf.png' width="24"/> PDF</a></li> 
+                        <li class="divider"></li>
+                       
+                    </ul>
+                </div>                                    
+                
+            </div>
+            <div class="panel-body" id="table123" #table123>
+                <table id="customers2" class="table datatable">
+                    <thead>
+                        <tr>
+                            <th>Code candidature</th>
+                            <th>Candidat</th>
+                            <th>Offre</th>
+                            <th>technologie</th>
+                            <th>Seniorité</th>
+                            <th>Evaluateur</th>
+                            <th>date d'entretien opérationnel BDT</th>
+                            <th>Validation BDT</th>
+                            <th>date d'entretien opérationnel client</th>
+                            <th>Validation client</th>
+                            <th>Test</th>
+                            <th>Validation test</th>
+                            <th>Statut</th>
+                            <th>Commentaire</th>
+                            <th>Fiche d'evaluation</th>
+                            <th *ngIf="isUser()">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr *ngFor="let candidature of candidatures">
+                            <td>{{candidature.code}}</td>
+                            <td>{{candidature.candidat.nom}}</td>
+                            <td>{{candidature.offre.id}}</td>
+                            <td>{{candidature.offre.competence.nom}}</td>
+                            <td>{{candidature.offre.profil}}</td>
+                            <td>{{candidature.evaluateur}}</td>
+                            <td>{{candidature.eo_bd}}</td>
+                            <td><span class="label label-success">{{candidature.statut_bd.titre}}</span></td>
+                            <td>{{candidature.eo_client}}</td>
+                            <td><span class="label label-success">{{candidature.statut_client.titre}}</span></td>
+                            <td>{{candidature.test}}</td>
+                            <td><span class="label label-success">{{candidature.statut_test.titre}}</span></td>
+                            <td><span class="label label-success">{{candidature.statut_glob.titre}}</span></td>
+                            <td>{{candidature.commentaire}}</td>
+                            <td><a [routerLink]="['/formulaire',candidature.id]" >Fiche d'evaluation</a></td>
+                            <td *ngIf="isUser()">
+                                <button class="btn btn-default btn-rounded btn-sm" [routerLink]="['/editCandidature',candidature.id]"  routerLinkActive="active"><span class="fa fa-pencil"></span></button>
+                                <button class="btn btn-danger btn-rounded btn-sm" (click)="DeleteCandidature(candidature)" ><span class="fa fa-times"></span></button>
+                            </td>
+                            
+                        </tr>
+                        
+                        
+                       
+                    </tbody>
+                </table>                                    
+                
+            </div>
+        </div>
+        <!-- END DATATABLE EXPORT -->                            
+        
+
+    </div>
+</div>
+

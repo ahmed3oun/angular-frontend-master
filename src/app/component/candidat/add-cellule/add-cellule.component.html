@@ -1,0 +1,105 @@
+<div class="row">
+    <div class="col-md-12">
+        
+        <form class="form-horizontal">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>Ajouter une Cellule</strong> </h3>
+                <ul class="panel-controls">
+                    <li><a [routerLink]="'/menu'" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                </ul>
+            </div>
+
+            <div class="panel-body">                                                                        
+                
+                <div class="form-group">                                        
+                    <label class="col-md-3 col-xs-12 control-label">Nom Cellule</label>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span ></span></span>
+                            <input type="text" class="form-control" [(ngModel)]= "cels.nom" name="nom" >
+                        </div>            
+                    </div>
+                </div> 
+                <div class="form-group">                                        
+                    <label class="col-md-3 col-xs-12 control-label">antene</label>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span ></span></span>
+                            <input type="text" class="form-control" [(ngModel)]= "cels.antene" name="antene" >
+                        </div>            
+                    </div>
+                </div> 
+
+                
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">power</label>
+                    <div class="col-md-6 col-xs-12">                                                                                            
+                        <input type="text" class="form-control" [(ngModel)]= "cels.power" name="power">
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">bande</label>
+                    <div class="col-md-6 col-xs-12">                                                                                            
+                        <input type="text" class="form-control" [(ngModel)]= "cels.bande" name="bande">
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">bsc</label>
+                    <div class="col-md-6 col-xs-12">                                                                                            
+                        <input type="text" class="form-control" [(ngModel)]= "cels.bsc" name="bsc">
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">rnc</label>
+                    <div class="col-md-6 col-xs-12">                                                                                            
+                        <input type="text" class="form-control" [(ngModel)]= "cels.rnc" name="rnc">
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">bcch</label>
+                    <div class="col-md-6 col-xs-12">                                                                                            
+                        <input type="text" class="form-control" [(ngModel)]= "cels.bcch" name="bcch">
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">tch</label>
+                    <div class="col-md-6 col-xs-12">                                                                                            
+                        <input type="text" class="form-control" [(ngModel)]= "cels.tch" name="tch">
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">lac</label>
+                    <div class="col-md-6 col-xs-12">                                                                                            
+                        <input type="text" class="form-control" [(ngModel)]= "cels.lac" name="lac">
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">psc</label>
+                    <div class="col-md-6 col-xs-12">                                                                                            
+                        <input type="text" class="form-control" [(ngModel)]= "cels.psc" name="psc">
+                        
+                    </div>
+                </div>
+                
+            <div class="panel-footer">
+                                             
+                <button class="btn btn-primary pull-right" type="button" (click)="addCellule()" >Submit</button>
+            </div>
+            </div>
+            </div>
+        </form>
+        
+    </div>
+</div>                    
+
+
+
+

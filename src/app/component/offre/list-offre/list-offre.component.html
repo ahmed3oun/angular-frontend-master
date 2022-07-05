@@ -1,0 +1,117 @@
+    <!-- START RESPONSIVE TABLES -->
+    <div class="row">
+        <div class="col-md-12">
+            
+            <div class="panel panel-default">
+                <div class="panel-body">
+                   
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <span class="fa fa-search"></span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Who are you looking for?"/>
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-primary">Chercher</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </form>                                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title">Offre </h3>
+                    <ul class="panel-controls">
+                        <li><button class="btn btn-default btn-rounded btn-sm" *ngIf="isUser()" routerLink ="/addOffre" routerLinkActive="active"><span class="fa fa-plus"></span></button></li>
+                    </ul>  
+                </div>
+
+                <div class="panel-body panel-body-table">
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-actions">
+                            <thead>
+                                <tr>
+                                    <th width="50">Numéro</th>
+                                    <th width="100">Region</th>
+                                    <th width="100">Agence</th>
+                                    <th width="100">Client</th>
+                                    <th width="100">Affaire</th>
+                                    <th width="100">Technologie</th>
+                                    <th width="100">Profil</th>
+                                    <th width="100">Nombre ETP</th>
+                                    <th width="100">Disponibilté</th>
+                                    <th width="100">Probabilité</th>
+                                    <th width="100">Date de démarrage</th>
+                                    <th width="100">Date de soumission</th>
+                                    <th width="100">Durée de la mission</th>
+                                    <th width="100">TJM</th>
+                                    <th width="100">Commentaire</th>
+                                    <th width="100">Statut</th>
+                                    <th width="100" *ngIf="isUser()">Actions</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>                                            
+                                <tr id="trow_1" *ngFor="let offre of offres" >
+                                    <td class="text-center"><strong>{{offre.id}}</strong></td>
+                                    <td><strong>{{offre.projet.region}}</strong></td>
+                                    <td><strong>{{offre.projet.agence}}</strong></td>
+                                    <td><strong>{{offre.projet.client}}</strong></td>
+                                    <td><strong>{{offre.projet.projet}}</strong></td>
+                                    <td><span class="label label-success">{{offre.competence.nom}}</span></td>
+                                    <td><strong>{{offre.profil}}</strong></td>
+                                    <td><strong>{{offre.nb_etp}}</strong></td>
+                                    <td><strong>{{offre.dispo}}</strong></td>
+                                    <td><strong>{{offre.proba}}</strong></td>
+                                    <td><strong>{{offre.date_demarrage}}</strong></td>
+                                    <td><strong>{{offre.date_soumission}}</strong></td>
+                                    <td><strong>{{offre.duree_mission}}</strong></td>
+                                    <td><strong>{{offre.tjm}}</strong></td>
+                                    <td><strong>{{offre.commentaire}}</strong></td>
+                                    <td><strong>{{offre.statut}}</strong></td>
+                                    <td *ngIf="isUser()" >
+                                        <button class="btn btn-default btn-rounded btn-sm"  [routerLink]="['/editOffre',offre.id]"  routerLinkActive="active"><span class="fa fa-pencil"></span></button>
+                                        <button class="btn btn-danger btn-rounded btn-sm"   (click)="DeleteOffre(offre)" ><span class="fa fa-times"></span></button>
+                                    </td>
+                                    
+                               
+                            </tbody>
+                        </table>
+                    </div>                                
+
+                </div>
+            </div>                                                
+
+        </div>
+    </div>
+    <!-- END RESPONSIVE TABLES -->
+    <div class="message-box animated fadeIn" data-sound="alert" id="mb-remove-row">
+        <div class="mb-container">
+            <div class="mb-middle">
+                <div class="mb-title"><span class="fa fa-times"></span> Remove <strong>Data</strong> ?</div>
+                <div class="mb-content">
+                    <p>Are you sure you want to remove this row?</p>                    
+                    <p>Press Yes if you sure.</p>
+                </div>
+                <div class="mb-footer">
+                    <div class="pull-right">
+                        <button class="btn btn-success btn-lg mb-control-yes">Yes</button>
+                        <button class="btn btn-default btn-lg mb-control-close">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        

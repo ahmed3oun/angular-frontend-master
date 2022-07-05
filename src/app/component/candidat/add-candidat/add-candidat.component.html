@@ -1,0 +1,172 @@
+                   
+<div class="row">
+    
+    <div class="col-md-12">
+            
+        <form class="form-horizontal">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>Ajouter un Site Radio</strong> </h3>
+                <ul class="panel-controls">
+                    <li><a routerLink="/menu" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                </ul>
+            </div>
+
+            <div class="panel-body">                                                                        
+                
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">Site</label>
+                    <div class="col-md-6 col-xs-12">                                            
+                        <div class="input-group">
+                            <span class="input-group-addon"><span ></span></span>
+                            <input type="text" class="form-control" [(ngModel)]= "newSite.site" name="site">
+                        </div>                                            
+                        
+                    </div>
+                </div>
+                
+                <div class="form-group">                                        
+                    <label class="col-md-3 col-xs-12 control-label">Access</label>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span ></span></span>
+                            <input type="text" class="form-control" [(ngModel)]= "newSite.access" name="access">
+                        </div>            
+                    </div>
+                </div>
+
+                <div class="form-group">                                        
+                    <label class="col-md-3 col-xs-12 control-label">TypeStation</label>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span ></span></span>
+                            <input type="email" class="form-control" [(ngModel)]= "newSite.typeStation" name="typeStation">
+                        </div>            
+                    </div>
+                </div>
+                
+                <div class="form-group">                                        
+                    <label class="col-md-3 col-xs-12 control-label">HBA</label>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span ></span></span>
+                            <input type="text" class="form-control" [(ngModel)]= "newSite.hba" name="hba" >
+                        </div>            
+                    </div>
+                </div>
+
+                <div class="form-group">                                        
+                    <label class="col-md-3 col-xs-12 control-label">Surface_Site</label>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span ></span></span>
+                            <input type="text" class="form-control" [(ngModel)]= "newSite.surfaceSite" name="surfaceSite" >
+                        </div>            
+                    </div>
+                </div>
+
+                <div class="form-group">                                        
+                    <label class="col-md-3 col-xs-12 control-label">Surface_Utilisé</label>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span ></span></span>
+                            <input type="text" class="form-control" [(ngModel)]= "newSite.surfaceUtilise" name="surfaceUtilise" >
+                        </div>            
+                    </div>
+                </div>
+
+                <div class="form-group">                                        
+                    <label class="col-md-3 col-xs-12 control-label">Surface_Disponible</label>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span ></span></span>
+                            <input type="text" class="form-control" [(ngModel)]= "newSite.surfaceDisponible" name="surfaceDisponible" >
+                        </div>            
+                    </div>
+                </div>
+
+                
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">Governement</label>
+                    <div class="col-md-6 col-xs-12"> 
+                                                                                                                   
+                        <select class="form-control custom-select"  [(ngModel)]= "newSite.gouvernement"  name="gouvernement">
+                            <span class="input-group-addon"><span ></span></span>
+                            <option selected disabled>--- Selectionnez Gouvernement ---</option>
+                            <option *ngFor="let gouv of gouverments" [value]="gouv.nom"  >{{gouv.nom}}</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">Technologie</label>
+                    <div class="col-md-6 col-xs-12">                                                                                            
+                        <span class="input-group-addon"><span ></span></span>
+                            <input type="text" class="form-control" [(ngModel)]= "newSite.technologie" name="technologie">
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">Loyer Actuel</label>
+                    <div class="col-md-6 col-xs-12">                                                                                            
+                        <span class="input-group-addon"><span ></span></span>
+                            <input type="text" class="form-control" [(ngModel)]= "newSite.loyer_actuel" name="loyer_actuel" >
+                        
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">Fournisseur</label>
+                    <div class="col-md-6 col-xs-12">                                                                                            
+                        <span class="input-group-addon"><span ></span></span>
+                            <input type="text" class="form-control" [(ngModel)]= "newSite.fournisseur" name="fournisseur" >
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">Locateur</label>
+                    <div class="col-md-6 col-xs-12">                                                                                            
+                        <span class="input-group-addon"><span ></span></span>
+                            <input type="text" class="form-control" [(ngModel)]= "newSite.locateur" name="locateur" >
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">Date de mise en service</label>
+                    <div class="col-md-6 col-xs-12">                                                                                            
+                        <span class="input-group-addon"><span ></span></span>
+                            <input type="date" class="form-control" [(ngModel)]= "newSite.date_mise_en_service" name="fournisseur" >
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">Cellule</label>
+                    <div class="col-md-6 col-xs-12"> 
+                                                                                                                   
+                        <select class="form-control custom-select" multiple [(ngModel)]= "newSite.cellules_id" name="cellules_id">
+                            <span class="input-group-addon"><span ></span></span>
+                            <option disabled selected>--- Selectionnez Cellules ---</option>
+                            <option *ngFor="let cel of cellules " [value]="cel.id"  >{{cel.nom}}</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary d-flex justify-content-center w-50 mx-auto" type="button" 
+                 routerLink ="/addSite" routerLinkActive="active" (click)="addSite()"  >Submit</button>
+                
+
+            </div>
+            <div class="panel-footer">
+                                             
+                <a class="btn btn-primary " type="button"  
+                        href ="/addCellule"
+                        >Cellule</a>
+            </div>
+         
+        </div>
+        </form>
+        
+    </div>
+</div>
+
+

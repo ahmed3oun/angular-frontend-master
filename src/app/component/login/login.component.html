@@ -1,0 +1,53 @@
+
+        
+        <div class="login-container">
+        
+            <div class="login-box animated fadeInDown">
+                <div class="login-logo"></div>
+                <div class="login-body" >
+                    <div class="login-title"><strong>Welcome</strong>, Please login</div>
+                    <div  class="alert alert-danger" *ngIf="err==1">
+                        <strong>login ou mot de passe erronés..</strong>
+                       </div>
+                    <form  class="form-horizontal" >
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="username" placeholder="Username" [(ngModel)]="user.username"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="user.password"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <a href="#" class="btn btn-link btn-block">Forgot your password?</a>
+                        </div>
+                        <div class="col-md-6">
+                            <button  type="button" class="btn btn-info btn-block" (click)="onLoggedin()">Log In</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+                <div class="login-footer">
+                    <div class="pull-left">
+                        &copy; 2014 AppName
+                    </div>
+                    <div class="pull-right">
+                        <a href="#">About</a> |
+                        <a href="#">Privacy</a> |
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+
+
+
+
+
+
+

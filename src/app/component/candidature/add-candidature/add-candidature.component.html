@@ -1,0 +1,139 @@
+
+    <div class="row">
+        <div class="col-md-12">
+            
+            <form class="form-horizontal">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Ajouter une candidature</strong> </h3>
+                    <ul class="panel-controls">
+                        <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">  
+                    <div class="form-group">                                        
+                        <label class="col-md-3 col-xs-12 control-label">Code candidature</label>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                <input type="text" class="form-control" [(ngModel)]= "newCandidature.code"  name="code">
+                            </div>            
+                        </div>
+                    </div>    
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Candidat</label>
+                        <div class="col-md-6 col-xs-12">                                                                                            
+                            <select class="form-control select" [(ngModel)]= "newCandidature.candidat" name="candidat" >
+                                <option [ngValue]="undefined">--- Selectionnez un candidat ---</option>
+                                <option *ngFor="let candidat of candidats" [ngValue]="candidat">{{candidat.nom}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Offre</label>
+                        <div class="col-md-6 col-xs-12">                                                                                            
+                            <select class="form-control select" [(ngModel)]= "newCandidature.offre" name="offre">
+                                <option [ngValue]="undefined">--- Selectionnez une offre ---</option>
+                                <option *ngFor="let offre of offres" [ngValue]="offre">{{offre.id}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">                                        
+                        <label class="col-md-3 col-xs-12 control-label">Evaluateur </label>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                <input type="text" class="form-control" [(ngModel)]= "newCandidature.evaluateur" name="evaluateur">
+                            </div>            
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">                                        
+                        <label class="col-md-3 col-xs-12 control-label">date d'entretien opérationnel BDT </label>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                <input type="text" class="form-control datepicker" [(ngModel)]= "newCandidature.eo_bd" name="eo_bd">                                            
+                            </div>
+                          
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Validation BDT</label>
+                        <div class="col-md-6 col-xs-12">                                                                                            
+                            <select class="form-control select" [(ngModel)]= "newCandidature.statut_bd" name="statut_bd">
+                                <option [ngValue]="undefined">--- Selectionnez un statut ---</option>
+                                <option *ngFor="let statut of statuts" [ngValue]="statut">{{statut.titre}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">                                        
+                        <label class="col-md-3 col-xs-12 control-label">date d'entretien opérationnel Client </label>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                <input type="text" class="form-control datepicker" [(ngModel)]= "newCandidature.eo_client" name="eo_client">                                            
+                            </div>                  
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Validation client</label>
+                        <div class="col-md-6 col-xs-12">                                                                                            
+                            <select class="form-control select" [(ngModel)]= "newCandidature.statut_client" name="statut_client" >
+                                <option [ngValue]="undefined">--- Selectionnez un statut ---</option>
+                                <option *ngFor="let statut of statuts" [ngValue]="statut">{{statut.titre}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">                                        
+                        <label class="col-md-3 col-xs-12 control-label">Test </label>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                <input type="text" class="form-control datepicker" [(ngModel)]= "newCandidature.test" name="test">                                            
+                            </div>                  
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Validation test</label>
+                        <div class="col-md-6 col-xs-12">                                                                                            
+                            <select class="form-control select"  [(ngModel)]= "newCandidature.statut_test" name="statut_test" >
+                                <option [ngValue]="undefined">--- Selectionnez un statut ---</option>
+                                <option *ngFor="let statut of statuts" [ngValue]="statut">{{statut.titre}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Statut</label>
+                        <div class="col-md-6 col-xs-12">                                                                                            
+                            <select class="form-control select"  [(ngModel)]= "newCandidature.statut_glob" name="statut_glob" >
+                                <option [ngValue]="undefined">--- Selectionnez un statut ---</option>
+                                <option *ngFor="let statut of statuts" [ngValue]="statut">{{statut.titre}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Commentaire</label>
+                        <div class="col-md-6 col-xs-12">                                            
+                            <textarea class="form-control" rows="5"  [(ngModel)]= "newCandidature.commentaire" name="commentaires"></textarea>
+                         
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                                                      
+                    <button type="submit" (click)="addCandidature()">Submit</button>
+                </div>
+            </div>
+            </form>
+            
+        </div>
+    </div>                    
+    
+
+

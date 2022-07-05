@@ -1,0 +1,14 @@
+ngb-rating {
+    color: #c42727;
+    font-size: 25px;
+    
+}
+
+    
+.center {
+    margin: auto;
+
+    left: 50%;
+    top: 50%;
+    padding: 10px;
+    }

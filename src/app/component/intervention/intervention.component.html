@@ -1,0 +1,90 @@
+
+
+        
+        <form class="form-horizontal  px-3" (ngSubmit)="addIntervention()" >
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>intervention</strong> </h3>
+                <ul class="panel-controls">
+                    <li><a [routerLink]="'/menu'" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                </ul>
+            </div>
+
+            <div class="panel-body">                                                                        
+                
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">probleme</label>
+                    <div class="col-md-6 col-xs-12">                                            
+                        <div class="input-group">
+                            <span class="input-group-addon"><span ></span></span>
+                            <input type="text" class="form-control" [(ngModel)]= "newIntervention.problem" name="problem" >
+                        </div>                                            
+                        
+                    </div>
+                </div>
+                
+                <div class="form-group">                                        
+                    <label class="col-md-3 col-xs-12 control-label">Date</label>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span ></span></span>
+                            <input type="date" class="form-control" [(ngModel)]= "newIntervention.date" name="date">
+                        </div>            
+                    </div>
+                </div>
+
+                <div class="form-group">                                        
+                    <label class="col-md-3 col-xs-12 control-label">observation</label>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span ></span></span>
+                            <input type="email" class="form-control" [(ngModel)]= "newIntervention.observation" name="observation" >
+                        </div>            
+                    </div>
+                </div>
+                
+                
+
+                <div class="form-group">                                        
+                    <label class="col-md-3 col-xs-12 control-label">Nom&Prenom</label>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span ></span></span>
+                            <input type="text" class="form-control" [(ngModel)]= "newIntervention.fullname" name="fullname" >
+                        </div>            
+                    </div>
+                </div>
+
+                
+
+                
+
+                
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">intervenant</label>
+                    <div class="col-md-6 col-xs-12"> 
+                                                                                                                   
+                        <select class="form-control custom-select" [(ngModel)]= "newIntervention.option" name="option">
+                            <span class="input-group-addon"><span ></span></span>
+                            <option disabled selected>--- Selectionnez type ---</option>
+                            <option [value]="'externe'">externe</option>
+                            <option [value]="'interne'">interne</option>
+                           
+                        </select>
+                    </div>
+                </div>
+                
+
+            </div>
+            <div class="panel-footer">
+                                             
+                <button class="btn btn-primary pull-right" type="submit"  >submit</button>
+            </div>
+         
+        </div>
+        </form>
+
+                      
+
+
+

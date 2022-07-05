@@ -1,0 +1,182 @@
+    <!-- START RESPONSIVE TABLES -->
+    <div class="row">
+        <div class="col-md-12">
+            
+            <div class="panel panel-default">
+                <div class="panel-body">
+                   
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <span class="fa fa-search"></span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Who are you looking for?"/>
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-primary">Chercher</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </form>                                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title">Site Radio </h3>
+                    <ul class="panel-controls">
+                        <li><button class="btn btn-default btn-rounded btn-sm"  *ngIf="isENGINEER() || isAdmin() " routerLink ="/addSite" routerLinkActive="active"><span class="fa fa-plus"></span></button></li>
+                    </ul>  
+                </div>
+
+                <div class="panel-body panel-body-table">
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-actions">
+                            <thead>
+                                
+                                <tr>
+                                    <th width="100">Id</th>
+                                    <th width="100">Site</th>
+                                    <th width="100">Access</th>
+                                    <th width="100">TypeStation</th>
+                                    <th width="100">HBA</th>
+                                    <th width="100">Surface_Site</th>
+                                    <th width="100">Surface_Utilisé</th>
+                                    <th width="100">Surface_Disponible</th>
+                                    <th width="100">Date de mise en service</th>
+                                    <th width="100">Cellule id</th>
+                                    <th width="100">Power</th>
+                                    <th width="100">Cellule name</th>
+                                    <th width="100">Antene</th>
+                                    <th width="100">Bande</th>
+                                    <th width="100">BSC</th>
+                                    <th width="100">RNC</th>
+                                    <th width="100">BCCH</th>
+                                    <th width="100">TCH</th>
+                                    <th width="100">LAC</th>
+                                    <th width="100">PSC</th>
+                                    <th width="100" *ngIf="isENGINEER() || isAdmin()">Actions</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>                                            
+                                <tr id="trow_1" *ngFor="let c of site_radios">
+                                    <td class="text-center"><strong>{{c.id}}</strong></td>
+                                    <td class="text-center"><strong>{{c.site}}</strong></td>
+                                    <td class="text-center"><strong>{{c.access}}</strong></td>
+                                    <td class="text-center"><strong>{{c.typeStation}}</strong></td>
+                                    <td class="text-center"><strong>{{c.hba}}</strong></td>
+                                    <td class="text-center"><strong >{{c.surfaceSite}}</strong></td>
+                                    <td class="text-center"><strong >{{c.surfaceUtilise}}</strong></td>
+                                    <td class="text-center"><strong >{{c.surfaceDisponible}}</strong></td>
+                                    <td class="text-center"><strong>{{c.date_mise_en_service}}</strong> </td>
+                                    <td>
+                                        <li *ngFor="let cel of c.cellules">
+                                            {{cel.id}}
+                                        </li>
+                                    </td>
+                                    
+                                    <td>
+                                        <li *ngFor="let cel of c.cellules">
+                                            {{cel.power}}
+                                        </li>
+                                    </td>
+                                    
+                                    <td>
+                                        <li *ngFor="let cel of c.cellules">
+                                            {{cel.nom}}
+                                        </li>
+                                    </td>
+                                    
+                                    <td>
+                                        <li *ngFor="let cel of c.cellules">
+                                            {{cel.antene}}
+                                        </li>
+                                    </td>
+                                    
+                                    <td>
+                                        <li *ngFor="let cel of c.cellules">
+                                            {{cel.bande}}
+                                        </li>
+                                    </td>
+                                    
+                                    <td>
+                                        <li *ngFor="let cel of c.cellules">
+                                            {{cel.bsc}}
+                                        </li>
+                                    </td>
+                                    
+                                    <td>
+                                        <li *ngFor="let cel of c.cellules">
+                                            {{cel.rnc}}
+                                        </li>
+                                    </td>
+                                    
+                                    <td>
+                                        <li *ngFor="let cel of c.cellules">
+                                            {{cel.bcch}}
+                                        </li>
+                                    </td>
+                                    
+                                    <td>
+                                        <li *ngFor="let cel of c.cellules">
+                                            {{cel.tch}}
+                                        </li>
+                                    </td>
+                                    
+                                    <td>
+                                        <li *ngFor="let cel of c.cellules">
+                                            {{cel.lac}}
+                                        </li>
+                                    </td>
+
+                                    <td>
+                                        <li *ngFor="let cel of c.cellules">
+                                            {{cel.psc}}
+                                        </li>
+                                    </td>
+                                    
+
+                                    <td *ngIf="isENGINEER() || isAdmin()">
+                                        <button class="btn btn-default btn-rounded btn-sm"  [routerLink]="['/editSite',c.id]" routerLinkActive="active"><span class="fa fa-pencil"></span></button>
+                                        <button class="btn btn-danger btn-rounded btn-sm"  (click)="DeleteCandidat(c.id)" type="submit" ><span class="fa fa-times"></span></button>
+                                    </td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>                                
+
+                </div>
+            </div>                                                
+
+        </div>
+    </div>
+    <!-- END RESPONSIVE TABLES -->
+    <div class="message-box animated fadeIn" data-sound="alert" id="mb-remove-row">
+        <div class="mb-container">
+            <div class="mb-middle">
+                <div class="mb-title"><span class="fa fa-times"></span> Remove <strong>Data</strong> ?</div>
+                <div class="mb-content">
+                    <p>Are you sure you want to remove this row?</p>                    
+                    <p>Press Yes if you sure.</p>
+                </div>
+                <div class="mb-footer">
+                    <div class="pull-right">
+                        <button class="btn btn-success btn-lg mb-control-yes">Yes</button>
+                        <button class="btn btn-default btn-lg mb-control-close">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        

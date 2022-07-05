@@ -1,0 +1,84 @@
+<div class="row">
+    <div class="col-md-12">
+        
+        <form class="form-horizontal">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>Ajouter un utilisateur</strong> </h3>
+                <ul class="panel-controls">
+                    <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                </ul>
+            </div>
+
+            <div class="panel-body">                                                                        
+                
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">Nom d'utilisation</label>
+                    <div class="col-md-6 col-xs-12">                                            
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                            <input type="text" class="form-control" [(ngModel)]= "newUser.username" name="username">
+                        </div>                                            
+                        
+                    </div>
+                </div>
+                
+                <div class="form-group">                                        
+                    <label class="col-md-3 col-xs-12 control-label">Email</label>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="fa fa-envelope-o"></span></span>
+                            <input type="email" 
+                             class="form-control" [(ngModel)]= "newUser.email" name="email">
+                        </div>            
+                    </div>
+                </div>
+
+                <div class="form-group">                                        
+                    <label class="col-md-3 col-xs-12 control-label">Mot de passe</label>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
+                            <input type="password" class="form-control" [(ngModel)]= "newUser.password" name="password">
+                        </div>            
+                    </div>
+                </div>
+                     
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">Role</label>
+                    <div class="col-md-6 col-xs-12">
+                           
+                        <select ngModel #role class="custom-select" >
+                            <option  selected disabled>--- Selectionnez un role ---</option>
+                            <option *ngFor="let role of roles"  [value]="role"  > {{role}} </option>
+                        </select>
+
+                    </div>
+                </div>   
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label"> upload file</label>
+                    
+                    <div class="col-md-6 col-xs-12">                                                                                                                                        
+                        <!-- <input type="file" class="form-control fileinput btn-primary"  id="filename" 
+                        title="Browse file"  >   -->
+                        <label class="btn btn-default p-0">
+                            <input type="file" accept="image/*" (change)="selectFile($event)" />
+                            <img [src]="imgURL" height="200" *ngIf="imgURL">
+                          </label>   
+                    </div>
+                </div>
+            
+
+            </div>
+            <div class="panel-footer">
+                                             
+                <button class="btn btn-primary pull-right" type="submit" (click)="addUser()" >Submit</button>
+            </div>
+        </div>
+        </form>
+        
+    </div>
+</div>                    
+
+
+

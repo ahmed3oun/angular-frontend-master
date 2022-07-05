@@ -1,0 +1,155 @@
+    <div class="row">
+        <div class="col-md-12">
+            
+            <form class="form-horizontal">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Ajouter une offre</strong> </h3>
+                    <ul class="panel-controls">
+                        <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="panel-body">  
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Affaire</label>
+                        <div class="col-md-6 col-xs-12">                                                                                            
+                            <select class="form-control select" [(ngModel)]= "newOffre.projet" name="projet" >
+                                <option [ngValue]="undefined">--- Selectionnez un projet ---</option>
+                                <option *ngFor="let projet of projets" [ngValue]="projet" >{{projet.projet}}</option>
+                            </select>
+                        </div>
+                    </div>   
+                 
+   
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Technologie</label>
+                        <div class="col-md-6 col-xs-12">                                                                                            
+                            <select class="form-control select" [(ngModel)]= "newOffre.competence" name="competence"  >
+                                <option [ngValue]="undefined">--- Selectionnez une compétence ---</option>
+                                <option *ngFor="let competence of comps" [ngValue]="competence">{{competence.nom}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    </div><div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Profil</label>
+                        <div class="col-md-6 col-xs-12">                                                                                            
+                            <select class="form-control select" [(ngModel)]= "newOffre.statut" name="statut">
+                                <option [ngValue]="undefined">--- Selectionnez un profil ---</option>
+                                <option>ched d'equipe</option>
+                                <option>chef de projet</option>
+                                <option>expert</option>
+                                <option>Confirmé</option>
+                                <option>Senior</option>
+                                <option>Junior</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">                                        
+                        <label class="col-md-3 col-xs-12 control-label">Nombre ETP </label>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-clock-o "></span></span>
+                                <input type="number" class="form-control" [(ngModel)]= "newOffre.nb_etp" name="nb_etp">
+                            </div>            
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">                                        
+                        <label class="col-md-3 col-xs-12 control-label">Disponibilté</label>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-users"></span></span>
+                                <input type="number" class="form-control" [(ngModel)]= "newOffre.dispo" name="dispo">
+                            </div>            
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">                                        
+                        <label class="col-md-3 col-xs-12 control-label">Probabilité</label>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-briefcase"></span></span>
+                                <input type="number" class="form-control" [(ngModel)]= "newOffre.proba" name="proba" >
+                            </div>            
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">                                        
+                        <label class="col-md-3 col-xs-12 control-label">Date de démarrage</label>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                <input type="text" class="form-control datepicker" value="2014-11-01" [(ngModel)]= "newOffre.date_demarrage" name="date_demarrage">                                            
+                            </div>
+                          
+                        </div>
+                    </div>
+
+                    <div class="form-group">                                        
+                        <label class="col-md-3 col-xs-12 control-label">Date de soumission</label>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                <input type="text" class="form-control datepicker"  [(ngModel)]= "newOffre.date_soumission" name="date_soumission">                                            
+                            </div>
+                          
+                        </div>
+                    </div>
+
+                    <div class="form-group">                                        
+                        <label class="col-md-3 col-xs-12 control-label">Durée de la mission</label>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-clock-o "></span></span>
+                                <input type="number" class="form-control" [(ngModel)]= "newOffre.duree_mission" name="duree_mission" >
+                            </div>            
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">                                        
+                        <label class="col-md-3 col-xs-12 control-label">TJM</label>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-money"></span></span>
+                                <input type="number" class="form-control" [(ngModel)]= "newOffre.tjm" name="tjm">
+                            </div>            
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Commentaire</label>
+                        <div class="col-md-6 col-xs-12">                                            
+                            <textarea class="form-control" rows="5" [(ngModel)]= "newOffre.commentaire" name="commentaire"></textarea>
+                            <span class="help-block">Default textarea field</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">Statut</label>
+                        <div class="col-md-6 col-xs-12">                                                                                            
+                            <select class="form-control select" [(ngModel)]= "newOffre.statut" name="statut">
+                                <option [ngValue]="undefined">--- Selectionnez une statut ---</option>
+                                <option>Ouvert</option>
+                                <option>Clôturé</option>
+                            </select>
+                        </div>
+                    </div>
+      
+                <div class="panel-footer">
+                                                      
+                    <button class="btn btn-primary pull-right" type="submit" (click)="addOffre()">Submit</button>
+                </div>
+            </div>
+            </form>
+            
+        </div>
+    </div>                    
+    
+
+

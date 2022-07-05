@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-md-12 p-5 px-6">
+        <div class="spinner-border d-flex align-items-center justify-content-center" role="status" *ngIf="!interventions;else table">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <ng-template #table>
+            <div class="panel-body panel-body-table" >
+        
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-actions">
+                        <thead>
+                            
+                            <tr>
+
+                                <th width="100">Id</th>
+                                <th width="100">Probléme</th>
+                                <th width="100">Date</th>
+                                <th width="100">Observation</th>
+                                <th width="100">Nom & prénom</th>
+                                <th width="100">Intervenant</th>
+                                <th width="100">Action</th>
+                                
+                            </tr>
+            
+                        </thead>
+                        <tbody>                
+                            <tr id="trow_1" *ngFor="let item of interventions" >
+                                <td class="text-center"><strong>{{item.id}}</strong></td>
+                                <td class="text-center"><strong>{{item.problem}}</strong></td>
+                                <td class="text-center"><strong> {{item.date}} </strong></td>
+                                <td class="text-center"><strong>  {{item.observation}} </strong></td>
+                                <td class="text-center"><strong> {{item.fullname}} </strong></td>
+                                <td class="text-center"><strong> {{item.option}}  </strong></td>
+                                <td >
+                                    <!-- <button class="btn btn-default btn-rounded btn-sm"  [routerLink]="['/editSite',c.id]" routerLinkActive="active"><span class="fa fa-pencil"></span></button> -->
+                                    <button class="btn btn-danger btn-rounded btn-sm"  (click)="DeleteIntervention(item.id)" type="submit" ><span class="fa fa-times"></span></button>
+                                </td>
+                            </tr>                            
+                            
+                        </tbody>
+                    </table>
+                </div>                                
+            
+            </div>
+        </ng-template>
+    </div>
+
+    <app-intervention class="w-100" ></app-intervention>
+</div>
+
